@@ -1,0 +1,12 @@
+<h1>Titulo: {{tasks.title}}</h1>
+<h2>Descrição: {{tasks.description}}</h2>
+
+<div class="form-style-8">
+  <h2>Editar tarefa</h2>
+  <form action="/task/{{tasks._id}}" method="POST">
+    <input type="hidden" name="_id" value="{{_id}}">
+    <input type="text" name='title' value="{{tasks.title}}" />
+    <input type="text" name='description' value="{{tasks.description}}" />
+    <button type="submit">Editar</button>
+  </form>
+</div> 

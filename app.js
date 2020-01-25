@@ -18,7 +18,7 @@ const loginRouter = require('./routes/login');
 const perfilRouter = require('./routes/perfil');
 const logoutRouter = require('./routes/logout');
 const User = require('./models/user');
-const Tasks = require('./models/tasks');
+const taskRouter = require('./routes/task');
 
 const app = express();
 
@@ -140,6 +140,7 @@ app.use(flash());
 
 // router
 app.use('/', indexRouter);
+app.use('/task', taskRouter);
 app.use('/users', usersRouter);
 app.use('/signup', signupRouter);
 app.use('/login', loginRouter);

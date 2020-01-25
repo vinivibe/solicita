@@ -1,4 +1,4 @@
-<h1> Seja bem vindo {{this.username}}</h1>
+<h1> Seja bem vindo {{this.user.username}}</h1>
 
 <div class="form-style-8">
   <h2>Nova tarefa</h2>
@@ -8,4 +8,17 @@
     <input type="text" name='description' placeholder="Digite a descricao da tarefa" />
     <button type="submit">Criar</button>
   </form>
+</div> 
+
+<div>  
+  {{#each this.tasks}}
+    <br>
+    <p>Titulo: {{title}}</p>
+    <p>Descriação: {{description}}</p>
+    <p>Criador: {{owner}}</p>
+    <button type="submit"><a href="/task/{{_id}}">Edit</a></button>
+    <button type="submit"><a href="/task/{{_id}}/delete">Apagar</a></button>
+    <br>
+    <br>    
+  {{/each}}
 </div>
