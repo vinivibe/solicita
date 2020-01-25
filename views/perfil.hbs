@@ -6,6 +6,23 @@
     <input type="hidden" name="_id" value="{{_id}}">
     <input type="text" name='title' placeholder='Digite o titulo' />
     <input type="text" name='description' placeholder="Digite a descricao da tarefa" />
+
+    <label>Tipo da tarefa:</label>
+      <select name="types">
+        <option value="Briefing">Briefing</option>
+        <option value="Analise">Analise</option>
+        <option value="Desenvolvimento">Desenvolvimento</option>
+        <option value="Aprovação">Aprovação</option>
+        <option value="Refação">Refação</option>
+      </select>
+
+      <label>Status da tarefa:  </label>
+      <select name="states">
+        <option value="Backlog">Backlog</option>
+        <option value="Fazendo">Fazendo</option>
+        <option value="Feito">Feito</option>
+    </select>
+
     <button type="submit">Criar</button>
   </form>
 </div> 
@@ -16,6 +33,8 @@
     <p>Titulo: {{title}}</p>
     <p>Descriação: {{description}}</p>
     <p>Criador: {{owner}}</p>
+    <p>Tipo da tarefa: {{types}}</p>
+    <p>Status da tarefa: {{states}}</p>
     <button type="submit"><a href="/task/{{_id}}">Edit</a></button>
     <button type="submit"><a href="/task/{{_id}}/delete">Apagar</a></button>
     <br>

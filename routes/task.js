@@ -26,8 +26,8 @@ router.get('/:taskId/delete', ensureLoggedIn(), (req, res, next) => {
 
 router.post('/:taskId', ensureLoggedIn(), (req, res, next) => {
   const { taskId } = req.params; 
-  const { title, description } = req.body;
-  const newTask = { title, description };
+  const { title, description, types, states } = req.body;
+  const newTask = { title, description, types, states };
   task.findByIdAndUpdate(taskId, newTask)
     .then(_ => res.redirect('/perfil'))
     .catch((error) => next(error));

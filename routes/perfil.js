@@ -5,8 +5,8 @@ const { ensureLoggedIn } = require('connect-ensure-login');
 const task = require('../models/tasks');
 
 router.post('/', ensureLoggedIn(), (req, res, next) => {
-  const { title, description, _id } = req.body;
-  task.create({ title, description, owner: _id }, (err, tasks) => {
+  const { title, description, _id, types, states } = req.body;
+  task.create({ title, description, owner: _id, types, states }, (err, tasks) => {
     if (err) {
       console.log('An error happened:', err);
     } else {

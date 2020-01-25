@@ -7,6 +7,24 @@ const TasksSchema = new Schema(
     title: String,
     description: String,
     owner: String,
+    types: {
+      type: String,
+      enum: [
+        'Briefing',
+        'Analise',
+        'Desenvolvimento',
+        'Aprovação',
+        'Refação',
+      ],
+    },
+    states: {
+      type: String,
+      enum: [
+        'Backlog',
+        'Fazendo',
+        'Feito',
+      ],
+    },
   },
   {
     timestamps: true,

@@ -7,6 +7,23 @@
     <input type="hidden" name="_id" value="{{_id}}">
     <input type="text" name='title' value="{{tasks.title}}" />
     <input type="text" name='description' value="{{tasks.description}}" />
+    
+    <label>Tipo atual: {{tasks.types}} </label>
+      <select name="types">
+        <option value="Briefing">Briefing</option>
+        <option value="Analise">Analise</option>
+        <option value="Desenvolvimento">Desenvolvimento</option>
+        <option value="Aprovação">Aprovação</option>
+        <option value="Refação">Refação</option>
+    </select>
+
+    <label>Status da tarefa: {{tasks.states}} </label>
+      <select name="states">
+        <option value="Backlog">Backlog</option>
+        <option value="Fazendo">Fazendo</option>
+        <option value="Feito">Feito</option>
+    </select>
+
     <button type="submit">Editar</button>
   </form>
 </div> 
